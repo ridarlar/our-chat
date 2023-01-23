@@ -1,0 +1,107 @@
+.chatcontainer--content {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  /* width: 80%; */
+  width: 100%;
+  overflow: hidden;
+  padding: 15px;
+  border: 1px solid white;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.chatcontainer--content--inputContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  border: 1px solid white;
+  background-color: rgba(255, 255, 255, 0.712);
+  color: black;
+  width: 100%;
+  height: 40px;
+  padding: 5px;
+}
+
+.chatcontainer--content--inputContainer > input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: black;
+  font-size: 1.2rem;
+}
+
+.chatcontainer--content--messages {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+  margin: 0 0 10px 0;
+  border-radius: 10px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.chatcontainer--content--messages::-webkit-scrollbar {
+  width: 10px;
+}
+
+.chatcontainer--content--messages::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.712);
+  border-radius: 10px;
+}
+
+.chatcontainer--content--messages::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.456);
+  border-radius: 10px;
+}
+
+.message--orientation {
+  display: flex;
+  flex-direction: row;
+  margin: 5px 0 5px 0;
+  justify-content: flex-end;
+}
+
+.orientation-left {
+  justify-content: flex-start;
+}
+
+.orientation-content-left {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.message--content {
+  color: black;
+  border-radius: 10px;
+  padding: 0 10px;
+  background-color: rgba(255, 255, 255, 0.581);
+  width: 70%;
+}
+
+.message--content--userNickName {
+  color: rgb(5, 155, 20);
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 5px 0 5px 0;
+  text-align: end;
+}
+
+.message--content--text {
+  color: rgb(21, 21, 21);
+  font-size: 0.9rem;
+  text-align: justify;
+}
+
+.chatcontainer--content--input--icon {
+  color: black;
+  font-size: 1.5rem;
+  cursor: pointer;
+  width: 30px;
+}
