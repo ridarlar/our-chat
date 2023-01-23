@@ -13,7 +13,7 @@ export const useChat = (): ChatHook => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const newSocket = io("ws://3.133.81.208:8000/");
+    const newSocket = io("ws://18.220.94.7:8000/");
     setSocket(newSocket);
   }, []);
 
