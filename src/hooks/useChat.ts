@@ -14,6 +14,7 @@ export const useChat = (): ChatHook => {
 
   useEffect(() => {
     const newSocket = io("ws://18.220.94.7:8000/");
+
     setSocket(newSocket);
   }, []);
 
