@@ -73,8 +73,6 @@ const Message = ({
 }: RoomHistory) => {
   const { id } = useSelector((state: any) => state.user);
 
-  console.log("userMessgeId", userMessgeId);
-
   const orientationMessage = userMessgeId != id ? "orientation-left " : "";
   const orientationMessageContent =
     userMessgeId != id ? "orientation-content-left " : "";

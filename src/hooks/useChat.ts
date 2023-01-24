@@ -2,6 +2,7 @@ import { RoomHistory, appendMessage } from "../redux/slices/roomsSlice";
 import { useEffect, useState } from "react";
 import io from "socket.io-client";
 import { useDispatch } from "react-redux";
+import { socketUri } from "../const";
 interface ChatHook {
   sendMessage: (newMessage: RoomHistory) => void;
 }
@@ -11,11 +12,8 @@ export const useChat = (): ChatHook => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (process.env.HOST_API_GATEWAY) {
-      const newSocket = io("ws:localhost:8000");
-      setSocket(newSocket);
-      // newSocket.disconnect();
-    }
+    const newSocket = io(`${process.env.REACT_APP_HOST_API_GATEWAY}`);
+    setSocket(newSocket);
   }, []);
 
   useEffect(() => {
