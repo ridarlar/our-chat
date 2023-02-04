@@ -1,13 +1,17 @@
-FROM node:16-alpine
+FROM node:16.3.0-alpine
 
-RUN mkdir -p /home/app
-COPY . /home/app
-RUN cd /home/app && npm install && npm run build
+WORKDIR /app
 
-ARG SOCKET_URI 
+COPY ./build /app/build
+ 
+RUN npm install -g serve
 
-ENV REACT_APP_HOST_API_GATEWAY=$SOCKET_URI
+ARG PORT_GATEWAY
+ARG DOMAIN_GATEWAY
+
+ENV REACT_APP_PORT_API_GATEWAY=$PORT_GATEWAY
+ENV REACT_APP_DOMAIN_API_GATEWAY=$POMAIN_GATEWAY
 
 EXPOSE 3000 
 
-CMD ["node", "/home/app/index.js"]
+CMD ["serve", "-s", "/app/build", "-l", "3000"]

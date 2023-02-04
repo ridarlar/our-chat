@@ -17,10 +17,10 @@ const InputTextMessage = () => {
   useEffect(() => {
     setNewMessage({
       ...newMessage,
+      userName: userName,
       userMessageId: id,
-      userName,
     });
-  }, []);
+  }, [userName, id, setNewMessage, newMessage]);
 
   const handleInputChage = (e: any) => {
     setNewMessage({
@@ -73,9 +73,11 @@ const Message = ({
 }: RoomHistory) => {
   const { id } = useSelector((state: any) => state.user);
 
-  const orientationMessage = userMessgeId != id ? "orientation-left " : "";
+  console.log("userMessgeId", userMessgeId);
+
+  const orientationMessage = userMessgeId !== id ? "orientation-left " : "";
   const orientationMessageContent =
-    userMessgeId != id ? "orientation-content-left " : "";
+    userMessgeId !== id ? "orientation-content-left " : "";
 
   return (
     <div className={`message--orientation ${orientationMessage}`}>
